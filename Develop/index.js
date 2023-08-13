@@ -1,68 +1,73 @@
 // TODO: Include packages needed for this application
 const fs = require("fs");
 const inquirer = require("inquirer");
+const generateMarkdown = require("./utils/generateMarkdown");
 
 // TODO: Create an array of questions for user input
 const questions = () => inquirer.prompt([
     {
-        name: "name",
+        name: "username",
         type: "input",
-        message: "what is your name?"
+        message: "what is your GitHub username?"
     },
     {
-        name: "age",
+        name: "email",
         type: "input",
-        message: "what is your age?"
+        message: "what is your email address?"
     },
     {
-        name: "eyes",
+        name: "projectName",
         type: "input",
-        message: "what is your eye color?"
+        message: "what is your project's name?"
     },
     {
-        name: "state",
+        name: "description",
         type: "input",
-        message: "what state do you live in?"
+        message: "Please write a short description of your project:"
+    },
+    {
+        name: "license",
+        type: "list",
+        message: "What kind of license should your project have?",
+        choices: ["None", "MIT", "APACHE 2.0", "GPL 3.0", "BSD 3"],
+    },
+    {
+        name: "dependencies",
+        type: "input",
+        message: "What command should be run to install dependencies?",
+        default: "npm i",
+    },
+    {
+        name: "test",
+        type: "input",
+        message: "What command should be run to run tests?",
+        default: "npm test",
+    },
+    {
+        name: "usage",
+        type: "input",
+        message: "What does the user need to know about using the repo?",
+    },
+    {
+        name: "contributing",
+        type: "input",
+        message: "What does the user need to know about contributing to the repo?",
     },
 ]);
 
 // TODO: Create a function to write README file
-const generateHTML = ({ name, age, eyes, state}) => {
-    return `<!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <title>Noah's Professional README Generator</title>
-    </head>
-    <body>
-        <div class="bg-gray container-fluid">
-            <h1>Hello, my name is ${name}!</h1>
-            <p>I am ${age} years old.</p>
-            <h3><span class="badge bg-primary">Fun Facts about me</span></h3>
-            <ul>
-                <li>My eyes are ${eyes}</li>
-                <li>I live in the state of ${state}</li>
-            </ul>
-        </div>
-    </body>
-    </html>`
-}
-
-// console.log's the answers as an object with keys/values
 questions()
     .then((answers) => {
-        fs.writeFileSync('index.html', generateHTML(answers));
+        fs.writeFileSync('README.md', generateMarkdown(answers));
     })
     .then(() =>
-        console.log("Success! Your index.html has been written.")
+        console.log("Success! Your  has been written.")
     )
     .catch(err => console.log(err));
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+}
 
 // Function call to initialize app
 init();
