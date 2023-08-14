@@ -1,6 +1,6 @@
 # f
 
-  ![badge](https://img.shields.io/badge/license-MIT-blue)
+  ![badge](https://img.shields.io/badge/license-apache-blue)
 
   ## Description
   f
@@ -15,20 +15,20 @@
 
   ## Installation
   To install necessary dependencies, run the following command:
-  f
+  npm i
 
   ## Usage
   
 
   ## License
-  This project is licensed under the MIT license.
+  This project is licensed under the apache license. More can be viewed about this license by clicking here [apache](https://choosealicense.com/licenses/apache/).
 
   ## Contributing
   
 
   ## Tests
   To run tests, run the following command:
-  f
+  npm test
 
 
   ## Questions

@@ -29,7 +29,7 @@ const questions = () => inquirer.prompt([
         name: "license",
         type: "list",
         message: "What kind of license should your project have?",
-        choices: ["None", "MIT", "APACHE 2.0", "GPL 3.0", "BSD 3"],
+        choices: ["None", "mit", "apache", "gpl", "bsl"],
     },
     {
         name: "dependencies",
