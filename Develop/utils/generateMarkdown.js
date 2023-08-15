@@ -33,7 +33,7 @@ function generateMarkdown({ username, email, projectName, description, license, 
   - [License](#license)
   - [Contributing](#contributing)
   - [Tests](#tests)
-  - [Questiosn](#questions)
+  - [Questions](#questions)
 
   ## Installation
   To install necessary dependencies, run the following command:
