@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "None") {
-    return `[${license}](https://choosealicense.com/licenses/${license}/)`
+    return `This project is licensed under the ${license} license, click <a href="(https://choosealicense.com/licenses/${license}/)">here</a> to learn more about this license.`
   } else {
     return " ";
   }
@@ -37,21 +37,20 @@ function generateMarkdown({ username, email, projectName, description, license, 
 
   ## Installation
   To install necessary dependencies, run the following command:
-  ${dependencies}
+      <br><div style="background:grey">${dependencies}</div></br>
 
   ## Usage
   ${usage}
 
   ## License
-  This project is licensed under the ${license} license. More can be viewed about this license by clicking here ${renderLicenseLink(license)}.
+  ${renderLicenseLink(license)}
 
   ## Contributing
   ${contributing}
 
   ## Tests
   To run tests, run the following command:
-  ${test}
-
+      <br><div style = "background:grey">${test}</div></br>
 
   ## Questions
   If you have any questions about the repo, open an issue or contact me directly at ${email}. You can find more of my work at [${username}](http://github.com/${username}).
