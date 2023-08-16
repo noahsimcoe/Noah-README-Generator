@@ -12,7 +12,7 @@ function renderLicenseBadge(license) {
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license !== "None") {
-    return `This project is licensed under the ${license} license, click <a href="(https://choosealicense.com/licenses/${license}/)">here</a> to learn more about this license.`
+    return `This project is licensed under the ${license} license, click [here](https://choosealicense.com/licenses/${license}/) to learn more about this license.`
   } else {
     return " ";
   }

@@ -58,7 +58,7 @@ const questions = () => inquirer.prompt([
 // TODO: Create a function to write README file
 questions()
     .then((answers) => {
-        fs.writeFileSync('README.md', generateMarkdown(answers));
+        fs.writeFileSync('README2.md', generateMarkdown(answers));
     })
     .then(() =>
         console.log("Success! Your README.md file has been written.")
